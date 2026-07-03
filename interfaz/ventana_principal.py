@@ -50,22 +50,31 @@ class VentanaPrincipal:
         )
         titulo.pack(pady=20)
         
+# Botón que abre la ventana para registrar un nuevo cliente.
+# # Al hacer clic, ejecuta el método registrar_cliente().
+
         boton_cliente = tk.Button(
             self.ventana,
             text="Registrar Cliente",
             width=30,
             command=self.registrar_cliente
-        )
+        )        
         boton_cliente.pack(pady=8)
-        
+
+# Botón que abre la ventana para crear un nuevo servici
+# (Asesoría o Alquiler de Equipo).
+# Al hacer clic, ejecuta el método crear_servicio().        
         boton_servicio = tk.Button(
             self.ventana,
             text="Crear Servicio",
             width=30,
             command=self.crear_servicio
-        )
+        )        
         boton_servicio.pack(pady=8)
         
+# Botón que abre la ventana para crear una nueva reserva,
+# asociando un cliente con un servicio registrado.
+# Al hacer clic, ejecuta el método crear_reserva().        
         boton_reserva = tk.Button(
             self.ventana,
             text="Crear Reserva",
@@ -74,7 +83,9 @@ class VentanaPrincipal:
         )
         boton_reserva.pack(pady=8)
 
-        # Botón de simulación de operaciones exigido por la guía
+# Botón que ejecuta las 10 operaciones de prueba requeridas
+# para verificar el correcto funcionamiento del sistema.
+# Al hacer clic, ejecuta el método ejecutar_simulacion_automatica().
         boton_simulacion = tk.Button(
             self.ventana,
             text="Ejecutar Simulaciones (10 Op.)",
@@ -86,6 +97,8 @@ class VentanaPrincipal:
         )
         boton_simulacion.pack(pady=15)
         
+# Botón que cierra la aplicación y finaliza la ejecución del sistema.
+# Al hacer clic, destruye la ventana principal.        
         boton_salir = tk.Button(
             self.ventana,
             text="Salir",
@@ -93,6 +106,7 @@ class VentanaPrincipal:
             command=self.ventana.destroy
         )
         boton_salir.pack(pady=15)
+        
 
     def _obtener_lista_clientes(self):
         """Intenta leer la lista de clientes adaptándose a la estructura interna de SistemaFJ."""
@@ -442,3 +456,5 @@ class VentanaPrincipal:
         Ejecuta la ventana principal.
         """
         self.ventana.mainloop()
+
+
